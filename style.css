@@ -96,11 +96,17 @@ body {
     height: 1px;
     background-color: rgba(255, 255, 255, 0.2);
 }
+
+/* BANNER PLACEHOLDER */
+.banner-space {
+    height: 80vh; /* approx 1920x800 feel */
+    background-color: #000; /* temporary */
+}
+
 /* LEATHER SECTION */
 .leather-section {
-    padding: 100px 20px;
+    padding: 140px 20px;
 
-    /* Image placeholder (add your image later) */
     background: url('leather-bg.jpg') center/cover no-repeat;
 
     display: flex;
@@ -111,8 +117,8 @@ body {
 /* WHITE BOX */
 .leather-box {
     background: #ffffff;
-    padding: 50px 60px;
-    max-width: 700px;
+    padding: 40px 50px;
+    max-width: 600px;
     text-align: center;
 
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
