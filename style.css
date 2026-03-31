@@ -96,3 +96,48 @@ body {
     height: 1px;
     background-color: rgba(255, 255, 255, 0.2);
 }
+/* LEATHER SECTION */
+.leather-section {
+    padding: 100px 20px;
+
+    /* Image placeholder (add your image later) */
+    background: url('leather-bg.jpg') center/cover no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* WHITE BOX */
+.leather-box {
+    background: #ffffff;
+    padding: 50px 60px;
+    max-width: 700px;
+    text-align: center;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* HEADING */
+.leather-box h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    color: #0F3D2E;
+}
+
+/* LINE */
+.leather-line {
+    width: 60px;
+    height: 1px;
+    background-color: #C6A96B;
+    margin: 0 auto 20px auto;
+}
+
+/* PARAGRAPH */
+.leather-box p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.7;
+}
