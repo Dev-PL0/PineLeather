@@ -10,7 +10,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 25px 80px;
+    padding: 12px 80px;
     position: relative;
 
     /* Emerald gradient base */
@@ -59,7 +59,7 @@ body {
 }
 
 .logo {
-    width: 130px;
+    width: 100px;
 
     /* Gold / cream tint applied */
     filter: brightness(0) invert(85%) sepia(20%) saturate(300%) hue-rotate(10deg);
@@ -71,7 +71,7 @@ body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: -10px;
+    bottom: -6px;
 
     width: 280px;
     height: 1px;
@@ -126,8 +126,9 @@ body {
 
 /* HEADING */
 .leather-box h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 26px;
     letter-spacing: 3px;
     margin-bottom: 15px;
     color: #0F3D2E;
