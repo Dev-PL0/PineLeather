@@ -97,17 +97,97 @@ body {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* BANNER PLACEHOLDER */
+/* BANNER SLIDER */
 .banner-space {
     height: 80vh; /* approx 1920x800 feel */
-    background-color: #000; /* temporary */
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
 }
 
-/* LEATHER SECTION */
+.slider-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* SLIDER ARROWS */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(15, 61, 46, 0.65);
+    color: #F8F6F1;
+    border: 1px solid rgba(198, 169, 107, 0.5);
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.slider-btn:hover {
+    background-color: #C6A96B;
+    color: #0F3D2E;
+}
+
+.slider-btn.prev {
+    left: 25px;
+}
+
+.slider-btn.next {
+    right: 25px;
+}
+
+/* SLIDER DOTS */
+.slider-dots {
+    position: absolute;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 10;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(248, 246, 241, 0.4);
+    border: 1px solid #C6A96B;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active,
+.dot:hover {
+    background-color: #C6A96B;
+    transform: scale(1.2);
+}
+
+/* STATIC LEATHER BANNER SECTION */
 .leather-section {
     padding: 140px 20px;
-
-    background: url('leather-bg.jpg') center/cover no-repeat;
+    margin-top: 40px; /* Creates the clean 40px warm cream space from the sliding banner above */
+    
+    /* Points to your local leather-bg.jpg file in your folder with a dark text contrast overlay */
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+                url('leather-bg.jpg') center/cover no-repeat;
 
     display: flex;
     justify-content: center;

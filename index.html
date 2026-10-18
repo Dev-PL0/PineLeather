@@ -33,8 +33,36 @@
             <a href="#">Contact</a>
         </div>
     </nav>
-<!-- BANNER PLACEHOLDER -->
-<section class="banner-space"></section>
+
+    <!-- BANNER SLIDER -->
+    <section class="banner-space">
+        <div class="slider-track" id="sliderTrack">
+            <!-- Slide 1 (Replace src with your own image later, e.g., "banner1.jpg") -->
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=1920&q=80" alt="Leather Jacket">
+            </div>
+            <!-- Slide 2 (Replace src with your own image later, e.g., "banner2.jpg") -->
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1920&q=80" alt="Leather Bag">
+            </div>
+            <!-- Slide 3 (Replace src with your own image later, e.g., "banner3.jpg") -->
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=1920&q=80" alt="Leather Craft">
+            </div>
+        </div>
+
+        <!-- Manual Arrow Controls -->
+        <button class="slider-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="slider-btn next" onclick="moveSlide(1)">&#10095;</button>
+
+        <!-- Manual Dot Controls -->
+        <div class="slider-dots">
+            <span class="dot active" onclick="goToSlide(0)"></span>
+            <span class="dot" onclick="goToSlide(1)"></span>
+            <span class="dot" onclick="goToSlide(2)"></span>
+        </div>
+    </section>
+
     <!-- LEATHER SECTION (NEW) -->
     <section class="leather-section">
         <div class="leather-box">
@@ -45,6 +73,48 @@
             </p>
         </div>
     </section>
+
+    <!-- SLIDER SCRIPT -->
+    <script>
+        let currentIndex = 0;
+        const track = document.getElementById('sliderTrack');
+        const dots = document.querySelectorAll('.dot');
+        const totalSlides = dots.length;
+        let autoSlideTimer;
+
+        function updateSlider() {
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        function moveSlide(direction) {
+            currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+            updateSlider();
+            resetTimer();
+        }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            updateSlider();
+            resetTimer();
+        }
+
+        function startTimer() {
+            autoSlideTimer = setInterval(() => {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateSlider();
+            }, 4500);
+        }
+
+        function resetTimer() {
+            clearInterval(autoSlideTimer);
+            startTimer();
+        }
+
+        startTimer();
+    </script>
 
 </body>
 </html>
