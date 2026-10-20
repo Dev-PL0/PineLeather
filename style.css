@@ -187,9 +187,8 @@ body {
 /* STATIC LEATHER BANNER SECTION */
 .leather-section {
     padding: 140px 20px;
-    margin-top: 40px; /* Creates the clean 40px warm cream space from the sliding banner above */
+    margin-top: 40px;
     
-    /* Points to your local leather-bg.jpg file in your folder with a dark text contrast overlay */
     background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
                 url('leather-bg.jpg') center/cover no-repeat;
 
@@ -204,7 +203,6 @@ body {
     padding: 40px 50px;
     max-width: 600px;
     text-align: center;
-
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
@@ -235,35 +233,35 @@ body {
 
 /* MOTTO & 3-PILLAR CRAFTSMANSHIP SECTION */
 .craft-section {
-    padding: 110px 80px;
+    padding: 80px 80px; /* Reduced vertical padding */
     background-color: #F5F1E8;
     text-align: center;
 }
 
 .craft-header {
-    margin-bottom: 70px;
+    margin-bottom: 50px; /* Reduced gap */
 }
 
 .craft-subtitle {
     display: block;
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 4px;
     color: #C6A96B;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
     text-transform: uppercase;
 }
 
 .motto-title {
     font-family: 'Playfair Display', serif;
     font-weight: 500;
-    font-size: 34px;
-    letter-spacing: 4px;
+    font-size: 24px; /* Reduced from 34px to be more refined */
+    letter-spacing: 3px;
     color: #0F3D2E;
-    margin: 0 0 22px 0;
+    margin: 0 0 16px 0;
 }
 
 .motto-divider {
-    width: 180px;
+    width: 120px; /* Shorter, cleaner divider */
     height: 1px;
     margin: 0 auto;
     background: linear-gradient(
@@ -288,7 +286,6 @@ body {
     position: relative;
 }
 
-/* Vertical Gold Divider Between Pillars */
 .pillar:not(:last-child)::after {
     content: "";
     position: absolute;
@@ -302,25 +299,107 @@ body {
 .pillar-num {
     display: block;
     font-family: 'Playfair Display', serif;
-    font-size: 20px;
+    font-size: 18px;
     color: #C6A96B;
     letter-spacing: 2px;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
 .pillar h3 {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
-    font-size: 15px;
-    letter-spacing: 2.5px;
+    font-size: 14px;
+    letter-spacing: 2px;
     color: #0F3D2E;
-    margin: 0 0 14px 0;
+    margin: 0 0 12px 0;
 }
 
 .pillar p {
-    font-size: 13.5px;
+    font-size: 13px;
     color: #555;
-    line-height: 1.8;
+    line-height: 1.7;
     margin: 0;
     font-weight: 300;
+}
+
+/* FEATURED PRODUCTS SECTION */
+.featured-section {
+    padding: 90px 80px 120px 80px;
+    background-color: #F8F5EE;
+    text-align: center;
+}
+
+.featured-header {
+    margin-bottom: 60px;
+}
+
+.product-grid {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.product-card {
+    flex: 1;
+    background: #ffffff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+}
+
+.product-img-box {
+    width: 100%;
+    height: 380px;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.product-info {
+    padding: 30px;
+}
+
+.product-info h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: 2px;
+    color: #0F3D2E;
+    margin: 0 0 6px 0;
+}
+
+.product-cat {
+    font-size: 11.5px;
+    color: #777;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.product-link {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #C6A96B;
+    text-decoration: none;
+    border-bottom: 1px solid #C6A96B;
+    padding-bottom: 2px;
+    transition: color 0.3s ease;
+}
+
+.product-link:hover {
+    color: #0F3D2E;
 }
