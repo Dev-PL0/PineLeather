@@ -63,7 +63,9 @@ body {
 }
 
 .logo {
-    width: 100px;
+    width: 125px; /* Midpoint between 100px and 150px */
+    display: block;
+    margin: -9px auto; /* Locks the navbar to its original height */
 
     /* Gold / cream tint applied */
     filter: brightness(0) invert(85%) sepia(20%) saturate(300%) hue-rotate(10deg);
@@ -233,13 +235,13 @@ body {
 
 /* MOTTO & 3-PILLAR CRAFTSMANSHIP SECTION */
 .craft-section {
-    padding: 80px 80px; /* Reduced vertical padding */
+    padding: 80px 80px;
     background-color: #F5F1E8;
     text-align: center;
 }
 
 .craft-header {
-    margin-bottom: 50px; /* Reduced gap */
+    margin-bottom: 50px;
 }
 
 .craft-subtitle {
@@ -254,14 +256,14 @@ body {
 .motto-title {
     font-family: 'Playfair Display', serif;
     font-weight: 500;
-    font-size: 24px; /* Reduced from 34px to be more refined */
+    font-size: 24px;
     letter-spacing: 3px;
     color: #0F3D2E;
     margin: 0 0 16px 0;
 }
 
 .motto-divider {
-    width: 120px; /* Shorter, cleaner divider */
+    width: 120px;
     height: 1px;
     margin: 0 auto;
     background: linear-gradient(
@@ -322,10 +324,101 @@ body {
     font-weight: 300;
 }
 
+/* FEATURED COLLECTIONS SECTION */
+.collections-section {
+    padding: 90px 80px;
+    background-color: #F8F5EE;
+    text-align: center;
+}
+
+.collections-header {
+    margin-bottom: 55px;
+}
+
+.collections-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.collection-card {
+    flex: 1;
+    height: 520px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+}
+
+.collection-img-box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s ease;
+}
+
+.collection-card:hover .collection-img-box {
+    transform: scale(1.04);
+}
+
+.collection-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.collection-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(15, 61, 46, 0.85) 0%,
+        rgba(15, 61, 46, 0.2) 60%,
+        transparent 100%
+    );
+}
+
+.collection-overlay-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 35px;
+    z-index: 2;
+    text-align: left;
+}
+
+.collection-overlay-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 21px;
+    letter-spacing: 1.5px;
+    color: #F8F6F1;
+    margin: 0 0 14px 0;
+}
+
+.collection-link {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #C6A96B;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.collection-link:hover {
+    color: #F8F6F1;
+}
+
 /* FEATURED PRODUCTS SECTION */
 .featured-section {
-    padding: 90px 80px 120px 80px;
-    background-color: #F8F5EE;
+    padding: 90px 80px 100px 80px;
+    background-color: #F5F1E8;
     text-align: center;
 }
 
@@ -402,4 +495,289 @@ body {
 
 .product-link:hover {
     color: #0F3D2E;
+}
+
+/* VIEW ALL COLLECTIONS BUTTON */
+.view-all-Wrapper {
+    margin-top: 65px;
+}
+
+.btn-collections {
+    display: inline-block;
+    padding: 15px 42px;
+    font-size: 11.5px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #0F3D2E;
+    border: 1px solid #0F3D2E;
+    background-color: transparent;
+    transition: all 0.35s ease;
+}
+
+.btn-collections:hover {
+    background-color: #0F3D2E;
+    color: #C6A96B;
+    border-color: #0F3D2E;
+}
+
+/* MAGAZINE-STYLE EDITORIAL SPLIT SECTION */
+.editorial-section {
+    padding: 110px 80px;
+    background-color: #F8F5EE;
+}
+
+.editorial-container {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.editorial-image {
+    flex: 1.1;
+    height: 460px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.editorial-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.editorial-content {
+    flex: 1;
+    text-align: left;
+}
+
+.editorial-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 1.4;
+    letter-spacing: 2.5px;
+    color: #0F3D2E;
+    margin: 0 0 20px 0;
+}
+
+.editorial-line {
+    width: 65px;
+    height: 1px;
+    background-color: #C6A96B;
+    margin-bottom: 24px;
+}
+
+.editorial-content p {
+    font-size: 13.5px;
+    color: #555;
+    line-height: 1.8;
+    font-weight: 300;
+    margin: 0 0 18px 0;
+}
+
+.editorial-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #0F3D2E;
+    text-decoration: none;
+    border-bottom: 1px solid #C6A96B;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+}
+
+.editorial-link:hover {
+    color: #C6A96B;
+}
+
+/* MAGAZINE CORE VALUES & BORDERLESS MANIFESTO SECTION (DARK FINISH) */
+.manifesto-section {
+    padding: 120px 80px;
+    background-color: #151210; /* Rich dark/black luxury tone */
+    text-align: center;
+    border-top: 1px solid rgba(198, 169, 107, 0.2);
+}
+
+.manifesto-container {
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.manifesto-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    text-align: left;
+}
+
+.manifesto-item {
+    flex: 1;
+    background: transparent;
+}
+
+.manifesto-img-box {
+    width: 100%;
+    height: 320px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 22px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.manifesto-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.manifesto-content {
+    padding: 0 5px;
+}
+
+.manifesto-num {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    color: #C6A96B;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.manifesto-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 17px;
+    letter-spacing: 1.5px;
+    color: #F8F6F1;
+    margin: 0 0 10px 0;
+}
+
+.manifesto-content p {
+    font-size: 13px;
+    color: #B5B0A8;
+    line-height: 1.7;
+    font-weight: 300;
+    margin: 0;
+}
+
+/* COMPACT EMERALD FOOTER BOOKEND */
+.site-footer {
+    background: linear-gradient(
+        135deg,
+        #0F3D2E 0%,
+        #124A37 50%,
+        #0F3D2E 100%
+    );
+    color: #F8F6F1;
+    padding: 55px 80px 25px 80px;
+    border-top: 1px solid rgba(198, 169, 107, 0.3);
+}
+
+.footer-container {
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.footer-brand-center {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.footer-brand-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: 4px;
+    color: #F8F6F1;
+    margin: 0 0 6px 0;
+}
+
+.footer-tagline {
+    font-size: 12.5px;
+    color: #C6A96B;
+    letter-spacing: 1.5px;
+    margin: 0;
+    font-weight: 300;
+}
+
+.footer-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(198, 169, 107, 0.25);
+}
+
+.footer-links-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin: 35px 0;
+}
+
+.footer-col {
+    flex: 1;
+}
+
+.footer-col h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    color: #C6A96B;
+    margin: 0 0 14px 0;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    color: #D1CEC7;
+    font-size: 12.5px;
+    letter-spacing: 0.5px;
+    font-weight: 300;
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #C6A96B;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    font-size: 11.5px;
+    color: rgba(248, 246, 241, 0.6);
+    font-weight: 300;
+}
+
+.footer-legal-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-legal-links a {
+    text-decoration: none;
+    color: rgba(248, 246, 241, 0.6);
+    transition: color 0.3s ease;
+}
+
+.footer-legal-links a:hover {
+    color: #C6A96B;
 }
