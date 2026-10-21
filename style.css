@@ -40,8 +40,7 @@ body {
 }
 
 /* NAV LINKS */
-.nav-left a,
-.nav-right a {
+.nav-main-link {
     margin: 0 14px;
     text-decoration: none;
     color: #F8F6F1; /* light cream text */
@@ -49,10 +48,11 @@ body {
     letter-spacing: 1.5px;
     text-transform: uppercase;
     transition: all 0.3s ease;
+    display: inline-block;
+    padding: 8px 0;
 }
 
-.nav-left a:hover,
-.nav-right a:hover {
+.nav-main-link:hover {
     color: #C6A96B; /* soft gold hover */
 }
 
@@ -101,6 +101,89 @@ body {
     bottom: 0;
     height: 1px;
     background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* LUXURY MEGAMENU STYLING */
+.nav-item-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.megamenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transform: translateY(10px);
+    width: 520px;
+    background: linear-gradient(
+        135deg,
+        #0F3D2E 0%,
+        #124A37 100%
+    );
+    border: 1px solid rgba(198, 169, 107, 0.35);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    padding: 30px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.35s ease;
+    z-index: 2000;
+}
+
+.nav-right .nav-item-dropdown .megamenu {
+    left: auto;
+    right: 0;
+}
+
+.nav-item-dropdown:hover .megamenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.megamenu-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    text-align: left;
+}
+
+.megamenu-col {
+    flex: 1;
+}
+
+/* Megamenu header font set to Poppins for natural looking & symbol */
+.megamenu-col h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #C6A96B;
+    margin: 0 0 12px 0;
+    text-transform: uppercase;
+}
+
+.megamenu-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.megamenu-col ul li {
+    margin-bottom: 8px;
+}
+
+.megamenu-col ul li a {
+    text-decoration: none;
+    color: #F8F6F1;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    font-weight: 300;
+    transition: color 0.3s ease;
+    display: block;
+}
+
+.megamenu-col ul li a:hover {
+    color: #C6A96B;
 }
 
 /* BANNER SLIDER */
@@ -801,4 +884,94 @@ body {
 
 .footer-legal-links a:hover {
     color: #C6A96B;
+}
+
+/* CATEGORY PAGE HERO BANNER */
+.category-hero {
+    padding: 100px 20px;
+    background: linear-gradient(rgba(15, 61, 46, 0.85), rgba(15, 61, 46, 0.85)),
+                url('leather-bg.jpg') center/cover no-repeat;
+    text-align: center;
+    color: #F8F6F1;
+}
+
+.category-hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.category-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 32px;
+    letter-spacing: 3px;
+    color: #F8F6F1;
+    margin: 0;
+}
+
+.category-hero-content p {
+    font-size: 14px;
+    color: #D1CEC7;
+    font-weight: 300;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* FILTER SUB-NAVIGATION BAR */
+.filter-bar {
+    background-color: #EFE9DD;
+    border-bottom: 1px solid rgba(198, 169, 107, 0.3);
+    padding: 18px 0;
+    text-align: center;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background-color: transparent;
+    border: 1px solid rgba(15, 61, 46, 0.3);
+    color: #0F3D2E;
+    padding: 8px 22px;
+    font-size: 11.5px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: #0F3D2E;
+    color: #C6A96B;
+    border-color: #0F3D2E;
+}
+
+/* TRUE CSS GRID FOR CATEGORY PAGES */
+.mens-catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+    .mens-catalog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .mens-catalog-grid {
+        grid-template-columns: 1fr;
+    }
 }
