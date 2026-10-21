@@ -20,29 +20,29 @@
         <div class="nav-left">
             <!-- Men Dropdown Menu -->
             <div class="nav-item-dropdown">
-                <a href="mens.html" class="nav-main-link">Men</a>
+                <a href="/mens" class="nav-main-link">Men</a>
                 <div class="megamenu">
                     <div class="megamenu-container">
                         <div class="megamenu-col">
                             <h4>Bags & Slings</h4>
                             <ul>
-                                <li><a href="mens.html">City Slings (Large)</a></li>
-                                <li><a href="mens.html">Venture Backpacks</a></li>
+                                <li><a href="/mens">City Slings (Large)</a></li>
+                                <li><a href="/mens">Venture Backpacks</a></li>
                             </ul>
                         </div>
                         <div class="megamenu-col">
                             <h4>Small Goods</h4>
                             <ul>
-                                <li><a href="mens.html">Artisan Wallets</a></li>
-                                <li><a href="mens.html">Card Holders</a></li>
-                                <li><a href="mens.html">Passport Covers</a></li>
+                                <li><a href="/mens">Artisan Wallets</a></li>
+                                <li><a href="/mens">Card Holders</a></li>
+                                <li><a href="/mens">Passport Covers</a></li>
                             </ul>
                         </div>
                         <div class="megamenu-col">
                             <h4>Outerwear</h4>
                             <ul>
-                                <li><a href="mens.html">Signature Biker Jackets</a></li>
-                                <li><a href="mens.html">Bombers & Blazers</a></li>
+                                <li><a href="/mens">Signature Biker Jackets</a></li>
+                                <li><a href="/mens">Classic Bomber Jackets</a></li>
                             </ul>
                         </div>
                     </div>
@@ -108,7 +108,7 @@
         </div>
 
         <div class="nav-center">
-            <a href="index.html"><img src="tralogo.png" class="logo"></a>
+            <a href="/"><img src="tralogo.png" class="logo"></a>
         </div>
 
         <div class="nav-right">
@@ -128,9 +128,9 @@
                         <div class="megamenu-col">
                             <h4>Shop by Piece</h4>
                             <ul>
-                                <li><a href="mens.html">Slings & Purses</a></li>
-                                <li><a href="mens.html">Wallets & Small Goods</a></li>
-                                <li><a href="mens.html">Jackets & Backpacks</a></li>
+                                <li><a href="/mens">Slings & Purses</a></li>
+                                <li><a href="/mens">Wallets & Small Goods</a></li>
+                                <li><a href="/mens">Jackets & Backpacks</a></li>
                             </ul>
                         </div>
                     </div>
@@ -290,7 +290,7 @@
                 <div class="product-info">
                     <h3>CITY SLING (LARGE)</h3>
                     <p class="product-cat">Travel & Daily</p>
-                    <a href="mens.html" class="product-link">View Piece</a>
+                    <a href="/mens" class="product-link">View Piece</a>
                 </div>
             </div>
 
@@ -302,7 +302,7 @@
                 <div class="product-info">
                     <h3>CITY SLING (COMPACT)</h3>
                     <p class="product-cat">Accessories</p>
-                    <a href="mens.html" class="product-link">View Piece</a>
+                    <a href="/mens" class="product-link">View Piece</a>
                 </div>
             </div>
 
@@ -314,7 +314,7 @@
                 <div class="product-info">
                     <h3>ARTISAN WALLET</h3>
                     <p class="product-cat">Accessories</p>
-                    <a href="mens.html" class="product-link">View Piece</a>
+                    <a href="/mens" class="product-link">View Piece</a>
                 </div>
             </div>
         </div>
@@ -328,7 +328,7 @@
                 <div class="product-info">
                     <h3>VENTURE BACKPACK</h3>
                     <p class="product-cat">Camping & School</p>
-                    <a href="mens.html" class="product-link">View Piece</a>
+                    <a href="/mens" class="product-link">View Piece</a>
                 </div>
             </div>
 
@@ -340,7 +340,7 @@
                 <div class="product-info">
                     <h3>SIGNATURE BIKER JACKET</h3>
                     <p class="product-cat">Men's Outerwear</p>
-                    <a href="mens.html" class="product-link">View Piece</a>
+                    <a href="/mens" class="product-link">View Piece</a>
                 </div>
             </div>
 
@@ -352,14 +352,14 @@
                 <div class="product-info">
                     <h3>EXECUTIVE LAPTOP BAG</h3>
                     <p class="product-cat">Workplace</p>
-                    <a href="mens.html" class="product-link">View Piece</a>
+                    <a href="/mens" class="product-link">View Piece</a>
                 </div>
             </div>
         </div>
 
         <!-- VIEW ALL COLLECTIONS BUTTON -->
         <div class="view-all-Wrapper">
-            <a href="mens.html" class="btn-collections">View All Collections</a>
+            <a href="/mens" class="btn-collections">View All Collections</a>
         </div>
     </section>
 
@@ -452,7 +452,7 @@
                 <div class="footer-col">
                     <h4>Collections</h4>
                     <ul>
-                        <li><a href="mens.html">Men's Range</a></li>
+                        <li><a href="/mens">Men's Range</a></li>
                         <li><a href="#">Women's Range</a></li>
                         <li><a href="#">Accessories</a></li>
                         <li><a href="#">Flagship Pieces</a></li>
@@ -491,7 +491,7 @@
         </div>
     </footer>
 
-    <!-- SLIDER SCRIPT -->
+    <!-- SLIDER & LOCAL FILE LINK HANDLER SCRIPT -->
     <script>
         let currentIndex = 0;
         const track = document.getElementById('sliderTrack');
@@ -531,6 +531,12 @@
         }
 
         startTimer();
+
+        // Automatically switches clean URLs to .html when opened offline from a local drive (like E:/)
+        if (window.location.protocol === 'file:') {
+            document.querySelectorAll('a[href="/"]').forEach(a => a.setAttribute('href', 'index.html'));
+            document.querySelectorAll('a[href="/mens"]').forEach(a => a.setAttribute('href', 'mens.html'));
+        }
     </script>
 
 </body>
