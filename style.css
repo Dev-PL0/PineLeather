@@ -651,6 +651,11 @@ body {
     font-weight: 500;
 }
 
+.manifesto-link {
+    text-decoration: none;
+    display: inline-block;
+}
+
 .manifesto-content h3 {
     font-family: 'Playfair Display', serif;
     font-weight: 500;
@@ -658,6 +663,22 @@ body {
     letter-spacing: 1.5px;
     color: #F8F6F1;
     margin: 0 0 10px 0;
+    transition: color 0.3s ease;
+}
+
+.manifesto-content h3:hover {
+    color: #C6A96B;
+}
+
+.arrow {
+    color: #C6A96B;
+    font-size: 15px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.manifesto-link:hover .arrow {
+    transform: translate(2px, -2px);
 }
 
 .manifesto-content p {
