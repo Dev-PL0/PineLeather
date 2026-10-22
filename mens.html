@@ -144,7 +144,7 @@
     <!-- 2. FOOTER POCKET -->
     <div id="site-footer"></div>
 
-    <!-- FILTER, PARTIAL LOADER & LOCAL FILE LINK HANDLER SCRIPT -->
+    <!-- FILTER, PARTIAL LOADER, ACTIVE NAV & LOCAL FILE LINK HANDLER SCRIPT -->
     <script>
         function filterProducts(category, button) {
             const buttons = document.querySelectorAll('.filter-btn');
@@ -170,6 +170,16 @@
             }
         }
 
+        function highlightActiveNav() {
+            const currentPage = window.location.pathname.replace(/\/$/, '').split('/').pop().replace('.html', '');
+            document.querySelectorAll('.nav-main-link').forEach(link => {
+                const linkPage = link.getAttribute('href').replace('.html', '').replace('/', '');
+                if (linkPage && linkPage === currentPage) {
+                    link.style.color = '#C6A96B';
+                }
+            });
+        }
+
         applyLocalLinks();
 
         fetch('header.html')
@@ -177,6 +187,7 @@
             .then(data => {
                 document.getElementById('site-header').innerHTML = data;
                 applyLocalLinks();
+                highlightActiveNav();
             });
 
         fetch('footer.html')
