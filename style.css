@@ -5,6 +5,13 @@ body {
     color: #0F3D2E;
 }
 
+/* MAKES THE MODULAR HEADER POCKET STICKY */
+#site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
 /* NAVBAR */
 .navbar {
     display: flex;
